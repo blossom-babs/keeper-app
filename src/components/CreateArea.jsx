@@ -21,8 +21,6 @@ function CreateArea(props) {
 	}
 
 	function submitNote(e) {
-		console.log(note);
-		console.log(JSON.stringify(note));
 		fetch('http://localhost:8000/api/v1/notes', {
 			method: 'POST',
 			mode: 'cors',
