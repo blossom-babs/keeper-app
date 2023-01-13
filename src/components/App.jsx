@@ -15,13 +15,20 @@ function App() {
 		});
 	}
 
-	function deleteNote(id) {
-		setNoteArr((prevVal) => {
-			return prevVal.filter((item, index) => {
-				return index !== id;
-			});
+	const deleteNote = async (id) => {
+		console.log(id);
+		const response = await fetch(`/api/v1/notes/:${id}`, {
+			method: 'DELETE',
+			mode: 'cors'
 		});
-	}
+		//const data = response.json({});
+		console.log(response);
+		// setNoteArr((prevVal) => {
+		// 	return prevVal.filter((item, index) => {
+		// 		return index !== id;
+		// 	});
+		// });
+	};
 
 	const fetchData = async () => {
 		const response = await fetch('http://localhost:8000/api/v1/notes', {
@@ -43,7 +50,7 @@ function App() {
 			{noteArr.map((item, index) => (
 				<Note
 					key={index}
-					id={index}
+					id={item._id}
 					title={item.title}
 					content={item.content}
 					delete={deleteNote}
