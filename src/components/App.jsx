@@ -6,6 +6,8 @@ import CreateArea from './CreateArea';
 import '../assets/index.css';
 import { useEffect } from 'react';
 
+const URL = 'http://localhost:8000';
+
 function App() {
 	const [noteArr, setNoteArr] = useState([]);
 
@@ -16,22 +18,21 @@ function App() {
 	}
 
 	const deleteNote = async (id) => {
-		console.log(id);
-		const response = await fetch(`/api/v1/notes/:${id}`, {
+		// eslint-disable-next-line
+		const response = await fetch(`${URL}/api/v1/note/${id}`, {
 			method: 'DELETE',
 			mode: 'cors'
-		});
-		//const data = response.json({});
-		console.log(response);
-		// setNoteArr((prevVal) => {
-		// 	return prevVal.filter((item, index) => {
-		// 		return index !== id;
-		// 	});
-		// });
+		})
+			.then((response) => console.log(response))
+			.catch((error) => console.log(error.response.data));
+
+		const result = noteArr.filter((item) => item._id !== id);
+
+		setNoteArr(result);
 	};
 
 	const fetchData = async () => {
-		const response = await fetch('http://localhost:8000/api/v1/notes', {
+		const response = await fetch(`${URL}/api/v1/notes`, {
 			method: 'GET',
 			mode: 'cors'
 		});
