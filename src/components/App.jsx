@@ -7,7 +7,6 @@ const URL = 'http://localhost:8000';
 
 function App() {
 	const [noteArr, setNoteArr] = useState([]);
-	const [hasError, setHasError] = useState(false);
 	const [loading, setLoading] = useState(true);
 
 	function addNote(note) {
@@ -37,7 +36,6 @@ function App() {
 			setNoteArr(response.data);
 			setLoading(false);
 		} catch (err) {
-			if (err) setHasError(true);
 			console.error(err);
 		}
 	};
