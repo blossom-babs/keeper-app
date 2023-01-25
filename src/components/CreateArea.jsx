@@ -5,6 +5,7 @@ import Zoom from '@material-ui/core/Zoom';
 
 function CreateArea(props) {
 	const [state, setState] = useState(false);
+	const [error, setError] = useState(false);
 	const [note, setNote] = useState({
 		title: '',
 		content: ''

@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Note from './Note';
-import CreateArea from './CreateArea';
+import React, { useState, useEffect } from 'react';
+import { Header, Footer, Note, CreateArea } from '../components';
 import '../assets/index.css';
-import { useEffect } from 'react';
+import axios from 'axios';
 
 const URL = 'http://localhost:8000';
 
 function App() {
 	const [noteArr, setNoteArr] = useState([]);
+	const [hasError, setHasError] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	function addNote(note) {
 		setNoteArr((prevVal) => {
@@ -32,12 +31,15 @@ function App() {
 	};
 
 	const fetchData = async () => {
-		const response = await fetch(`${URL}/api/v1/notes`, {
-			method: 'GET',
-			mode: 'cors'
-		});
-		const data = await response.json();
-		return setNoteArr(data);
+		try {
+			const response = await axios(`${URL}/api/v1/notes`);
+			console.log(response.status);
+			setNoteArr(response.data);
+			setLoading(false);
+		} catch (err) {
+			if (err) setHasError(true);
+			console.error(err);
+		}
 	};
 
 	useEffect(() => {
@@ -48,15 +50,21 @@ function App() {
 		<div>
 			<Header />
 			<CreateArea onAdd={addNote} />
-			{noteArr.map((item, index) => (
-				<Note
-					key={index}
-					id={item._id}
-					title={item.title}
-					content={item.content}
-					delete={deleteNote}
-				/>
-			))}
+			{loading ? (
+				'Loading...'
+			) : (
+				<div>
+					{noteArr.map((item, index) => (
+						<Note
+							key={index}
+							id={item._id}
+							title={item.title}
+							content={item.content}
+							delete={deleteNote}
+						/>
+					))}
+				</div>
+			)}
 
 			<Footer />
 		</div>
