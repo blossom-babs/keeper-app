@@ -5,6 +5,11 @@ import axios from 'axios';
 
 const URL = 'http://localhost:8000';
 
+// todo
+/*
+1. replace loading... with a more UI icon
+*/
+
 function App() {
 	const [noteArr, setNoteArr] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -32,7 +37,6 @@ function App() {
 	const fetchData = async () => {
 		try {
 			const response = await axios(`${URL}/api/v1/notes`);
-			console.log(response.status);
 			setNoteArr(response.data);
 			setLoading(false);
 		} catch (err) {
@@ -51,7 +55,7 @@ function App() {
 			{loading ? (
 				'Loading...'
 			) : (
-				<div>
+				<div className="note-ctn">
 					{noteArr.map((item, index) => (
 						<Note
 							key={index}
