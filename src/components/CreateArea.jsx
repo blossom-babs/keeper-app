@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
 import Zoom from '@material-ui/core/Zoom';
 
 function CreateArea(props) {
-	//const [state, setState] = useState(false);
+	const textareaEl = useRef();
 	const [note, setNote] = useState({
 		title: '',
 		content: ''
 	});
 
-	function addNote(e) {
+	const addNote = (e) => {
 		const { name, value } = e.target;
 		setNote((prevVal) => {
 			return {
@@ -18,7 +18,8 @@ function CreateArea(props) {
 				[name]: value
 			};
 		});
-	}
+		autoResize(e);
+	};
 
 	function submitNote(e) {
 		fetch('http://localhost:8000/api/v1/notes', {
@@ -38,12 +39,20 @@ function CreateArea(props) {
 			title: '',
 			content: ''
 		});
+		reduceSize();
 		e.preventDefault();
 	}
 
-	// function expandTabs() {
-	// 	setState(true);
-	// }
+	const autoResize = (e) => {
+		const target = e.currentTarget;
+		target.style.height = 'auto';
+		target.style.height = target.scrollHeight + 'px';
+	};
+
+	const reduceSize = () => {
+		const target = textareaEl.current;
+		target.style.height = 'auto';
+	};
 
 	return (
 		<div>
@@ -54,13 +63,28 @@ function CreateArea(props) {
 					name="title"
 					placeholder="Title"
 				/>
-
+				{/* style={{
+						resize: 'none',
+						overflow: 'auto',
+						border: '0px',
+						outline: '0px',
+						backgroundColor: 'transparent'
+					}} */}
 				<textarea
+					placeholder="Take a note"
+					name="content"
+					value={note.content}
+					ref={textareaEl}
+					onChange={addNote}>
+					Hodor!
+				</textarea>
+				{/* <div
+					role="textbox"
 					contentEditable="true"
 					placeholder="Take a note"
 					name="content"
 					value={note.content}
-					onChange={addNote}></textarea>
+					onChange={addNote}></div> */}
 				<Zoom in={true}>
 					<IconButton onClick={submitNote}>
 						<AddIcon />
