@@ -4,7 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Zoom from '@material-ui/core/Zoom';
 
 function CreateArea(props) {
-	const [state, setState] = useState(false);
+	//const [state, setState] = useState(false);
 	const [note, setNote] = useState({
 		title: '',
 		content: ''
@@ -41,30 +41,27 @@ function CreateArea(props) {
 		e.preventDefault();
 	}
 
-	function expandTabs() {
-		setState(true);
-	}
+	// function expandTabs() {
+	// 	setState(true);
+	// }
 
 	return (
 		<div>
 			<form className="create-note">
-				{state && (
-					<input
-						value={note.title}
-						onChange={addNote}
-						name="title"
-						placeholder="Title"
-					/>
-				)}
-				<textarea
-					onClick={expandTabs}
-					value={note.content}
+				<input
+					value={note.title}
 					onChange={addNote}
-					name="content"
-					placeholder="Take a note..."
-					rows={state ? '10' : '1'}
+					name="title"
+					placeholder="Title"
 				/>
-				<Zoom in={state ? true : false}>
+
+				<textarea
+					contentEditable="true"
+					placeholder="Take a note"
+					name="content"
+					value={note.content}
+					onChange={addNote}></textarea>
+				<Zoom in={true}>
 					<IconButton onClick={submitNote}>
 						<AddIcon />
 					</IconButton>
