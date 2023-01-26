@@ -56,6 +56,7 @@ footer p {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
+	justify-content: center;
 }
 
 .note h1 {
