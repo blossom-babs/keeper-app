@@ -6,8 +6,8 @@ The API of this project can be found [here](https://github.com/blossom-babs/keep
 
 ## Bootstrapped with
 
-[Reactjs](https://reactjs.org/) - frontend library
-[Jest](https://jestjs.io/) - testing
+- [Reactjs](https://reactjs.org/) - frontend library
+- [Jest](https://jestjs.io/) - testing
 
 ## Getting started
 

@@ -49,23 +49,25 @@ function App() {
 	}, []);
 
 	return (
-		<div>
+		<div className="app">
 			<Header />
 			<CreateArea onAdd={addNote} />
 			{loading ? (
 				'Loading...'
 			) : (
-				<div className="note-ctn">
-					{noteArr.map((item, index) => (
-						<Note
-							key={index}
-							id={item._id}
-							title={item.title}
-							content={item.content}
-							delete={deleteNote}
-						/>
-					))}
-				</div>
+				<main className="">
+					<div className="note-ctn">
+						{noteArr.map((item, index) => (
+							<Note
+								key={index}
+								id={item._id}
+								title={item.title}
+								content={item.content}
+								delete={deleteNote}
+							/>
+						))}
+					</div>
+				</main>
 			)}
 
 			<Footer />

@@ -34,9 +34,10 @@ header h1 {
 }
 
 footer {
-	position: absolute;
+	/* position: absolute; */
 	bottom: 0;
 	height: 2.5rem;
+	margin-top: 5rem;
 }
 
 footer p {
@@ -56,7 +57,8 @@ footer p {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
-	justify-content: center;
+	width: 90%;
+	margin: 0 auto;
 }
 
 .note h1 {
@@ -117,3 +119,5 @@ form.create-note button {
 	cursor: pointer;
 	outline: none;
 }
+
+/* APP */
