@@ -5,7 +5,6 @@ import Zoom from '@material-ui/core/Zoom';
 
 function CreateArea(props) {
 	const [state, setState] = useState(false);
-	const [error, setError] = useState(false);
 	const [note, setNote] = useState({
 		title: '',
 		content: ''
@@ -63,7 +62,7 @@ function CreateArea(props) {
 					onChange={addNote}
 					name="content"
 					placeholder="Take a note..."
-					rows={state ? '3' : '1'}
+					rows={state ? '10' : '1'}
 				/>
 				<Zoom in={state ? true : false}>
 					<IconButton onClick={submitNote}>

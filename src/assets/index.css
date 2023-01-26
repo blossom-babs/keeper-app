@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Nunito', sans-serif; */
+
 * {
 	padding: 0;
 	margin: 0;
@@ -5,7 +10,8 @@
 }
 
 html {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
 }
 
 body {
@@ -29,9 +35,7 @@ header h1 {
 
 footer {
 	position: absolute;
-	text-align: center;
 	bottom: 0;
-	width: 100%;
 	height: 2.5rem;
 }
 
@@ -45,6 +49,7 @@ footer p {
 	box-shadow: 0 2px 5px #ccc;
 	padding: 1rem;
 	width: 200px;
+	height: max-content;
 }
 
 .note-ctn {
@@ -61,8 +66,10 @@ footer p {
 .note p {
 	font-size: 1.1em;
 	margin-bottom: 10px;
-	white-space: pre-wrap;
+	white-space: pre;
 	word-wrap: break-word;
+	text-overflow: clip;
+	overflow: hidden;
 }
 
 .note button {
