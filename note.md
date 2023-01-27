@@ -21,3 +21,7 @@ stacking the notes box into one another
 6. Authentication so that notes are attached to a particular user
 7. Introduce labels to note
 8. I should be able to edit my notes
+
+### Observation
+
+1. Content is a required field but data without content still gets saved to the database. This should not be.
