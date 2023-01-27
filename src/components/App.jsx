@@ -55,19 +55,17 @@ function App() {
 			{loading ? (
 				'Loading...'
 			) : (
-				<main className="">
-					<div className="note-ctn">
-						{noteArr.map((item, index) => (
-							<Note
-								key={index}
-								id={item._id}
-								title={item.title}
-								content={item.content}
-								delete={deleteNote}
-							/>
-						))}
-					</div>
-				</main>
+				<div className="note-ctn">
+					{noteArr.map((item, index) => (
+						<Note
+							key={index}
+							id={item._id}
+							title={item.title}
+							content={item.content}
+							delete={deleteNote}
+						/>
+					))}
+				</div>
 			)}
 
 			<Footer />
