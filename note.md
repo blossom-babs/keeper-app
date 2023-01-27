@@ -25,3 +25,4 @@ stacking the notes box into one another
 ### Observation
 
 1. Content is a required field but data without content still gets saved to the database. This should not be.
+2. deleting note crashes the application

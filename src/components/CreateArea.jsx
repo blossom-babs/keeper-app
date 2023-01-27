@@ -6,8 +6,9 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:8000/api/v1/notes';
 
-function CreateArea(props) {
+const CreateArea = (props) => {
 	const textareaEl = useRef();
+	const [state, setState] = useState(false);
 	const [note, setNote] = useState({
 		title: '',
 		content: ''
@@ -24,14 +25,22 @@ function CreateArea(props) {
 		autoResize(e);
 	};
 
-	function submitNote(e) {
+	const displayBtn = (e) => {
+		const target = e.currentTarget;
+		console.log(target.name)
+		if ((target.name = 'content')) setState(true);
+	};
+
+	const submitNote = (e) => {
 		axios
 			.post(baseURL, note)
 			.then((response) => {
 				console.log(response);
 			})
 			.catch((err) => {
-				console.log(err.response.data);
+				if (err.response) {
+					console.log(err.response.data);
+				}
 			});
 
 		props.onAdd(note);
@@ -64,12 +73,14 @@ function CreateArea(props) {
 					placeholder="Title"
 				/>
 				<textarea
+					required
 					placeholder="Take a note"
 					name="content"
 					value={note.content}
 					ref={textareaEl}
 					onChange={addNote}></textarea>
-				<Zoom in={true}>
+
+				<Zoom in={state ? true : false}>
 					<IconButton onClick={submitNote}>
 						<AddIcon />
 					</IconButton>
