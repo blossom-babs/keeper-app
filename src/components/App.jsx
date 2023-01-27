@@ -3,29 +3,22 @@ import { Header, Footer, Note, CreateArea } from '../components';
 import '../assets/index.css';
 import axios from 'axios';
 
-const URL = 'http://localhost:8000';
+const baseURL = 'http://localhost:8000/api/v1/notes';
+const URL = 'http://localhost:8000/api/v1/note';
 
-// todo
-/*
-1. replace loading... with a more UI icon
-*/
-
-function App() {
+const App = () => {
 	const [noteArr, setNoteArr] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	function addNote(note) {
+	const addNote = (note) => {
 		setNoteArr((prevVal) => {
 			return [...prevVal, note];
 		});
-	}
+	};
 
 	const deleteNote = async (id) => {
-		// eslint-disable-next-line
-		const response = await fetch(`${URL}/api/v1/note/${id}`, {
-			method: 'DELETE',
-			mode: 'cors'
-		})
+		await axios
+			.delete(`${URL}/${id}`)
 			.then((response) => console.log(response))
 			.catch((error) => console.log(error));
 
@@ -36,7 +29,7 @@ function App() {
 
 	const getData = async () => {
 		try {
-			const response = await axios(`${URL}/api/v1/notes`);
+			const response = await axios(baseURL);
 			setNoteArr(response.data);
 			setLoading(false);
 		} catch (error) {
@@ -71,6 +64,6 @@ function App() {
 			<Footer />
 		</div>
 	);
-}
+};
 
 export default App;

@@ -21,6 +21,7 @@ stacking the notes box into one another
 6. Authentication so that notes are attached to a particular user
 7. Introduce labels to note
 8. I should be able to edit my notes
+9. Replace *Loading...* with UI icon
 
 ### Observation
 
