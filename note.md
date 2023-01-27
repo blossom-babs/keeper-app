@@ -1,8 +1,10 @@
 ### ROUGH TO-DO LIST
 
-| Idx | Task           | Status      |
-| --- | -------------- | ----------- |
-| 1   | Work on the UI | In progress |
+| Idx | Task                     | Status      |
+| --- | ------------------------ | ----------- |
+| 1   | Work on the UI           | In progress |
+| 2   |                          |             |
+| 3   | Replace Fetch with Axios | In Progress |
 
 1.  work on the UI : in progress
 <!-- 2. add tests -->
