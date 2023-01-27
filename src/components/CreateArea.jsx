@@ -2,6 +2,9 @@ import React, { useState, useRef } from 'react';
 import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
 import Zoom from '@material-ui/core/Zoom';
+import axios from 'axios';
+
+const URL = 'http://localhost:8000';
 
 function CreateArea(props) {
 	const textareaEl = useRef();
@@ -22,18 +25,16 @@ function CreateArea(props) {
 	};
 
 	function submitNote(e) {
-		fetch('http://localhost:8000/api/v1/notes', {
-			method: 'POST',
-			mode: 'cors',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(note)
-		})
+		console.log(note);
+		axios
+			.post(`${URL}/api/v1/notes`, note)
 			.then((response) => {
 				console.log(response);
 			})
 			.catch((err) => {
 				console.log(err.response.data);
 			});
+
 		props.onAdd(note);
 		setNote({
 			title: '',
