@@ -4,7 +4,8 @@
 | --- | ------------------------ | ----------- |
 | 1   | Work on the UI           | In progress |
 | 2   |                          |             |
-| 3   | Replace Fetch with Axios | In Progress |
+| 3   | Replace Fetch with Axios | ✅ |
+| 4   | When you click on the box, it should pop out with all the details | ✅ |
 
 1.  work on the UI : in progress
 <!-- 2. add tests -->
@@ -15,8 +16,7 @@ stacking the notes box into one another
 - OR they can be manipulated using transform: translate(1px, -260px); like google keep's.
   It is actually a really brilliant technique
 
-3. Replace fetch with axios
-4. When you click on the box, it should pop out with all the details
+
 5. Add prompt before deleting
 6. Authentication so that notes are attached to a particular user
 7. Introduce labels to note
