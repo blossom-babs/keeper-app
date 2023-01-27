@@ -34,7 +34,7 @@ function App() {
 		setNoteArr(result);
 	};
 
-	const fetchData = async () => {
+	const getData = async () => {
 		try {
 			const response = await axios(`${URL}/api/v1/notes`);
 			setNoteArr(response.data);
@@ -45,7 +45,7 @@ function App() {
 	};
 
 	useEffect(() => {
-		fetchData();
+		getData();
 	}, []);
 
 	return (
