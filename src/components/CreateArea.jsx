@@ -64,28 +64,12 @@ function CreateArea(props) {
 					name="title"
 					placeholder="Title"
 				/>
-				{/* style={{
-						resize: 'none',
-						overflow: 'auto',
-						border: '0px',
-						outline: '0px',
-						backgroundColor: 'transparent'
-					}} */}
 				<textarea
 					placeholder="Take a note"
 					name="content"
 					value={note.content}
 					ref={textareaEl}
-					onChange={addNote}>
-					Hodor!
-				</textarea>
-				{/* <div
-					role="textbox"
-					contentEditable="true"
-					placeholder="Take a note"
-					name="content"
-					value={note.content}
-					onChange={addNote}></div> */}
+					onChange={addNote}></textarea>
 				<Zoom in={true}>
 					<IconButton onClick={submitNote}>
 						<AddIcon />
