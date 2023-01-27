@@ -4,7 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Zoom from '@material-ui/core/Zoom';
 import axios from 'axios';
 
-const URL = 'http://localhost:8000';
+const baseURL = 'http://localhost:8000/api/v1/notes';
 
 function CreateArea(props) {
 	const textareaEl = useRef();
@@ -25,9 +25,8 @@ function CreateArea(props) {
 	};
 
 	function submitNote(e) {
-		console.log(note);
 		axios
-			.post(`${URL}/api/v1/notes`, note)
+			.post(baseURL, note)
 			.then((response) => {
 				console.log(response);
 			})
