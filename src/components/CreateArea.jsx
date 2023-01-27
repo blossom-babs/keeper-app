@@ -1,9 +1,7 @@
 import React, { useState, useRef } from 'react';
-import AddIcon from '@material-ui/icons/Add';
-import IconButton from '@material-ui/core/IconButton';
-import Zoom from '@material-ui/core/Zoom';
 import axios from 'axios';
-
+import { IconButton,Zoom } from '@mui/material';
+import  AddIcon  from '@mui/icons-material/Add';
 const baseURL = 'http://localhost:8000/api/v1/notes';
 
 const CreateArea = (props) => {
