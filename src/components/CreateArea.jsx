@@ -23,7 +23,7 @@ const CreateArea = (props) => {
 			};
 		});
 		autoResize(e);
-		displayBtn(e)
+		displayBtn(e);
 	};
 
 	const displayBtn = (e) => {
@@ -37,10 +37,8 @@ const CreateArea = (props) => {
 			.then((response) => {
 				console.log(response);
 			})
-			.catch((err) => {
-				if (err.response) {
-					console.log(err.response.data);
-				}
+			.catch((error) => {
+				console.log(error);
 			});
 
 		props.onAdd(note);
@@ -59,6 +57,7 @@ const CreateArea = (props) => {
 	};
 
 	const reduceSize = () => {
+		setState(false);
 		const target = textareaEl.current;
 		target.style.height = 'auto';
 	};

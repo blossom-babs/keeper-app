@@ -27,7 +27,7 @@ function App() {
 			mode: 'cors'
 		})
 			.then((response) => console.log(response))
-			.catch((error) => console.log(error.response.data));
+			.catch((error) => console.log(error));
 
 		const result = noteArr.filter((item) => item._id !== id);
 
@@ -39,8 +39,8 @@ function App() {
 			const response = await axios(`${URL}/api/v1/notes`);
 			setNoteArr(response.data);
 			setLoading(false);
-		} catch (err) {
-			console.error(err);
+		} catch (error) {
+			console.error(error);
 		}
 	};
 
