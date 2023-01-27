@@ -23,12 +23,12 @@ const CreateArea = (props) => {
 			};
 		});
 		autoResize(e);
+		displayBtn(e)
 	};
 
 	const displayBtn = (e) => {
 		const target = e.currentTarget;
-		console.log(target.name)
-		if ((target.name = 'content')) setState(true);
+		if (target.name === 'content') setState(true);
 	};
 
 	const submitNote = (e) => {
@@ -50,7 +50,7 @@ const CreateArea = (props) => {
 		});
 		reduceSize();
 		e.preventDefault();
-	}
+	};
 
 	const autoResize = (e) => {
 		const target = e.currentTarget;
@@ -88,6 +88,6 @@ const CreateArea = (props) => {
 			</form>
 		</div>
 	);
-}
+};
 
 export default CreateArea;
