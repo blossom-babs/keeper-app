@@ -22,8 +22,8 @@ stacking the notes box into one another
 7. Introduce labels to note
 8. I should be able to edit my notes
 9. Replace *Loading...* with UI icon
-10. ReactDOM.render is no longer being supported
-react-dom.development.js:86 Warning: You are importing createRoot from "react-dom" which is not supported. You should instead import it from "react-dom/client".
+10. ReactDOM.render is no longer being supported ✅
+
 ### Observation
 
 1. Content is a required field but data without content still gets saved to the database. This should not be.
