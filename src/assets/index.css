@@ -1,24 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap');
-
-/* font-family: 'Montserrat', sans-serif;
-font-family: 'Nunito', sans-serif; */
-
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
-html {
-	font-family: 'Nunito', sans-serif;
-	font-size: 16px;
-}
-
-body {
-	background: #eee;
-	padding: 0 16px;
-	background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-}
 
 header {
 	background-color: #f5ba13;
