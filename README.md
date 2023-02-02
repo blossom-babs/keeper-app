@@ -4,6 +4,8 @@ Keep track of all the ideas you have during the day (or night 😉) before you l
 
 The API of this project can be found [here](https://github.com/blossom-babs/keeper-api)
 
+**This is an ongoing project, current and (completed tasks tracker) can be found [here](https://github.com/blossom-babs/keeper-app/blob/master/note.md).**
+
 ## Bootstrapped with
 
 - [Reactjs](https://reactjs.org/) - frontend library
