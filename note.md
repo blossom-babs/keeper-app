@@ -2,7 +2,7 @@
 
 | Idx | Task                     | Status      |
 | --- | ------------------------ | ----------- |
-| 1   | Work on the UI           | In progress |
+| 1   | Work on the UI           | 🚲         |
 | 2   |                          |             |
 | 3   | Replace Fetch with Axios | ✅ |
 | 4   | When you click on the box, it should pop out with all the details | ✅ |
