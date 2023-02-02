@@ -6,6 +6,7 @@
 | 2   |                          |             |
 | 3   | Replace Fetch with Axios | ✅ |
 | 4   | When you click on the box, it should pop out with all the details | ✅ |
+| 5   | Replace css completely with SCSS ||
 
 1.  work on the UI : in progress
 <!-- 2. add tests -->
