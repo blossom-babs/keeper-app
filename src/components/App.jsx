@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header, Footer, Note, CreateArea } from '../components';
 import '../assets/index.css';
+import '../assets/index.scss';
 import axios from 'axios';
 
 const baseURL = 'http://localhost:8000/api/v1/notes';

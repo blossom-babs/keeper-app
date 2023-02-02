@@ -24,34 +24,33 @@ const Note = (props) => {
 	const handleClose = () => setOpen(false);
 
 	return (
-		<ClickAwayListener onClickAway={handleClose}>
+		<ClickAwayListener>
 			<div className="note">
-				<div onClick={handleOpen}>
-					Open note
-					<h1>{props.title}</h1>
-					<p>{props.content}</p>
-					<button
-						className="note-delete"
-						onClick={() => {
-							props.delete(props.id);
-						}}>
-						<DeleteIcon />
-					</button>
-					<Modal
-						open={open}
-						onClose={handleClose}
-						aria-labelledby="modal-modal-title"
-						aria-describedby="modal-modal-description">
-						<Box sx={style}>
-							<Typography id="modal-modal-title" variant="h6" component="h2">
-								Text in a modal
-							</Typography>
-							<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-								Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-							</Typography>
-						</Box>
-					</Modal>
-				</div>
+				<button className='note-openModal' onClick={handleOpen}> Open note</button>
+				<h1>{props.title}</h1>
+				<p>{props.content}</p>
+				<button
+					className="note-delete"
+					onClick={() => {
+						props.delete(props.id);
+					}}>
+					<DeleteIcon />
+				</button>
+				<Modal
+					onClickAway={handleClose}
+					open={open}
+					onClose={handleClose}
+					aria-labelledby="modal-modal-title"
+					aria-describedby="modal-modal-description">
+					<Box sx={style}>
+						<Typography id="modal-modal-title" variant="h6" component="h2">
+							Text in a modal
+						</Typography>
+						<Typography id="modal-modal-description" sx={{ mt: 2 }}>
+							Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+						</Typography>
+					</Box>
+				</Modal>
 			</div>
 		</ClickAwayListener>
 	);
