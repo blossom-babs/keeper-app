@@ -40,29 +40,30 @@ const Note = (props) => {
 					<DeleteIcon />
 				</button>
 				<Modal
-					onClickAway={handleClose}
 					open={open}
 					onClose={handleClose}
 					aria-labelledby="modal-modal-title"
 					aria-describedby="modal-modal-description">
 					<Box sx={style}>
+					<button onClick={handleClose}>close</button>
+
 						<h1 className="note-heading" id="modal-modal-title">
 							{props.title}
 						</h1>
 						<Typography id="modal-modal-description" sx={{ mt: 2 }}>
 							{props.content}
 						</Typography>
+						<div>
+							<LabelIcon />
+							<button
+								className="note-delete"
+								onClick={() => {
+									props.delete(props.id);
+								}}>
+								<DeleteIcon />
+							</button>
+						</div>
 					</Box>
-					<div>
-						<LabelIcon/>
-						<button
-					className="note-delete"
-					onClick={() => {
-						props.delete(props.id);
-					}}>
-					<DeleteIcon />
-				</button>
-					</div>
 				</Modal>
 			</div>
 		</ClickAwayListener>
