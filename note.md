@@ -1,12 +1,12 @@
-### ROUGH TO-DO LIST
+### TO-DO TRACKER
 
-| Idx | Task                     | Status      |
-| --- | ------------------------ | ----------- |
-| 1   | Work on the UI           | 🚲         |
-| 2   |                          |             |
-| 3   | Replace Fetch with Axios | ✅ |
-| 4   | When you click on the box, it should pop out with all the details | ✅ |
-| 5   | Replace css completely with SCSS ||
+| Idx | Task                     | Status      | Type |
+| --- | ------------------------ | ----------- | ---- |
+| 1   | Work on the UI           |  🚲         | Feature | 
+| 2   | ReactDOM.render is no longer being supported | ✅  | Bug |             
+| 3   | Replace Fetch with Axios | ✅ | Chore | 
+| 4   | When you click on the box, it should pop out with all the details | ✅ | Feature |
+| 5   | Replace css completely with SCSS | 🚲 | Chore |
 
 1.  work on the UI : in progress
 <!-- 2. add tests -->
@@ -23,7 +23,8 @@ stacking the notes box into one another
 7. Introduce labels to note
 8. I should be able to edit my notes
 9. Replace *Loading...* with UI icon
-10. ReactDOM.render is no longer being supported ✅
+10. 
+11. Make a clone of note
 
 
 <!-- handle close is actually not working yet -->
