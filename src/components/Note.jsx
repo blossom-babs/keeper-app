@@ -27,8 +27,8 @@ const Note = (props) => {
 		<ClickAwayListener>
 			<div className="note">
 				<button className='note-openModal' onClick={handleOpen}> Open note</button>
-				<h1>{props.title}</h1>
-				<p>{props.content}</p>
+				<h1 className='note-heading'>{props.title}</h1>
+				<p className='note-content'>{props.content}</p>
 				<button
 					className="note-delete"
 					onClick={() => {
