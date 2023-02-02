@@ -24,6 +24,9 @@ stacking the notes box into one another
 9. Replace *Loading...* with UI icon
 10. ReactDOM.render is no longer being supported ✅
 
+
+<!-- handle close is actually not working yet -->
+
 ### Observation
 
 1. Content is a required field but data without content still gets saved to the database. This should not be.
