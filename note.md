@@ -1,5 +1,8 @@
 ### TO-DO TRACKER
 
+🚲 : ongoing
+✅ : completed
+
 | Idx | Task                     | Status      | Type |
 | --- | ------------------------ | ----------- | ---- |
 | 1   | Work on the UI           |  🚲         | Feature | 
